@@ -7,6 +7,7 @@ def product_create_view(request):
     form = ProductForm(request.POST or None)
     if form.isValid():
         form.save()
+        form = ProductForm()
 
     obj = Product.objects.get(id=1)
     context = {
